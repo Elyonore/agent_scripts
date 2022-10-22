@@ -13,6 +13,6 @@ else
     command="yum install -y"
 fi
 
-sudo $command -y wget net-utils sysstat finger gcc make python3 epel-release git
+sudo $command wget net-utils sysstat finger gcc make python3 epel-release git
 
 echo "Installation complete"
