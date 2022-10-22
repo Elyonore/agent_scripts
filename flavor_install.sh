@@ -3,14 +3,14 @@
 command=""
 os=$(cat /etc/os-release | grep -i ^id= | awk -F "=" '{print $2}')  
 echo $os
-if [ $os=="ubuntu" ] 
+if [ $os == "ubuntu" ] 
 then 
-    command="apt install"
-elif [ $os=="alpine" ]
+    command="apt install -y"
+elif [ $os == "alpine" ]
 then 
-    command="apk add"
+    command="apk add -f"
 else
-    command="yum install"
+    command="yum install -y"
 fi
 
 sudo $command -y wget net-utils sysstat finger gcc make python3 epel-release git
